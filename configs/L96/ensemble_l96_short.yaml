@@ -1,0 +1,33 @@
+experiment_name: ensemble_l96/short
+run_module: run_ensemble_l96
+
+simulation_type: ensemble
+init_states_type: perfect # perfect or perturbed
+
+# Lorenz '96 parameters
+K: 8                
+J: 32               
+F: 20.0      
+h: 1.0              
+b: 10.0           
+c: 10.0   
+
+# Time parameters
+total_time: 10
+dt: 0.001
+si: 0.005
+
+# Ensemble parameters
+n_init_states: 300
+n_ens_members: 1
+init_states_dir: results/init_states_300/F_20.0
+
+# Output
+results_dir: results
+save_backend: zarr
+save_y: false
+
+# Resources
+cpu_count: 8
+states_mem_limit: 100
+seed: 0

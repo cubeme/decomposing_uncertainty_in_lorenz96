@@ -1,0 +1,38 @@
+experiment_name: fit_params_flow
+run_module: run_flow_training
+
+results_dir: tests/utils/output
+
+K: 8
+J: 32
+f_schedule:
+  type: constant
+  F: 20.0
+h: 1.0
+b: 10.0
+c: 10.0
+
+l96_data_dir: tests/run/data/l96_data
+l96_load_backend: numpy
+si: 0.05
+
+tensorboard_log_dir: true # will create 'tensorboard' subdirectory in out_dir if true
+early_stopping_patience: 8
+early_stopping_min_delta: 1e-4
+early_stopping_monitor: val_loss
+
+# AR(p) parameters
+fit_ar_parameters: true # default false
+ar_order: 2 # default 1
+
+n_coupling_layers: 2
+hidden_dims: [32, 32]
+train_perc: 1.0
+
+# Flow variations
+include_forcing_in_cond: true
+delta_t: 2 # number of previous time steps included in the conditioning input
+use_flexible_tails: false
+ttf_init_lambda: 0.0
+
+seed: 0

@@ -1,0 +1,39 @@
+experiment_name: init_states_300_perturbed
+run_module: run_perturb_initial_states
+
+init_states_dir: results/init_states_300
+
+load_sweep:
+  F:
+    - 18.0
+    - 20.0
+
+# Lorenz '96 parameters
+K: 8                
+J: 32               
+F: 
+  - 18.0
+  - 20.0          
+h: 1.0              
+b: 10.0           
+c: 10.0   
+
+# Perturbation parameters
+perturb_iid: true
+conditional_params:
+  perturb_std:
+    depends_on: F
+    values:
+       - when: 18.0
+         set: 0.28
+       - when: 20.0
+         set: 0.25
+
+n_init_states: null # optionally specify number of states to perturb (null = all)
+n_ens_members: 20 # number of perturbations per initial state
+
+# Output
+results_dir: results
+
+# Miscellaneous
+seed: 0

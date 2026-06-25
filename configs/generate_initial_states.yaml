@@ -1,0 +1,27 @@
+experiment_name: init_states_300
+run_module: run_generate_initial_states
+
+simulation_type: IC_generation
+generate_method: selection
+
+# Lorenz '96 parameters
+K: 8                
+J: 32               
+F: 
+  - 18.0
+  - 20.0          
+h: 1.0              
+b: 10.0           
+c: 10.0   
+
+# Time parameters
+dt: 0.001
+si: 0.005
+spin_up_time: 20.0  
+
+n_init_states: 300
+selection_mtu: 50  # step size in MTU (model time units)
+
+results_dir: results
+
+seed: 0

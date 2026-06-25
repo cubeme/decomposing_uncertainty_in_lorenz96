@@ -1,0 +1,38 @@
+experiment_name: ensemble_gcm_baseline_ar_p/long
+run_module: run_ensemble_gcm
+
+parameterization_type: baseline_ar_p
+simulation_type: ensemble
+init_states_type: perfect
+
+# Lorenz '96 model parameters
+K: 8                
+J: 32               
+F: 20.0      
+h: 1.0              
+b: 10.0           
+c: 10.0   
+
+# AR(1) noise parameters
+ar_order: 1
+
+# GCM simulation parameters
+total_time: 10000
+dt: 0.005
+si: 0.005
+time_stepping: RK2
+
+# Ensemble parameters
+n_init_states: 10
+n_ens_members: 1
+n_models: 1
+init_states_dir: results/init_states_300/F_20.0
+
+# Input/output
+results_dir: results
+params_dir: results/fitted_parameters
+save_backend: zarr
+
+# Miscellaneous
+cpu_count: null # null will use all available CPUs
+seed: 0

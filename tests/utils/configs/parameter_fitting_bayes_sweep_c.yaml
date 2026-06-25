@@ -1,0 +1,23 @@
+experiment_name: parameter_fitting_bayes
+run_module: run_parameter_fitting_bayes
+
+results_dir: tests/utils/output
+
+params_to_fit:
+  - bayes_coefs
+
+K: 8
+J: 32
+f_schedule:
+  type: constant
+  F: 20.0
+h: 1.0
+b: 10.0
+c: 
+  - 4.0
+  - 10.0
+
+l96_data_dir: tests/run/data/l96_data
+l96_load_backend: numpy
+si: 0.05
+seed: 0

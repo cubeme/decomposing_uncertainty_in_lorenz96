@@ -1,0 +1,36 @@
+experiment_name: gcm_flow_arp_base_ensemble
+run_module: run_ensemble_gcm
+
+simulation_type: ensemble
+parameterization_type: flow
+
+init_states_type: perturbed
+
+results_dir: tests/submit/output
+total_time: 5
+
+K: 8
+J: 32
+h: 1.0
+b: 10.0
+c: 10.0
+
+f_schedule:
+  type: constant
+  F: [19.0, 20.0]
+
+si: 0.05
+dt: 0.01
+
+n_init_states: 2
+n_ens_members: 2
+
+model_start_seed: 10
+
+cpu_count: 1
+seed: 0
+
+time_stepping: RK2
+noise_type: ar_p
+ar_order: 2
+flow_device: cpu

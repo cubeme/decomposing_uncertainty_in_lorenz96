@@ -1,0 +1,16 @@
+experiment_name: perturb_initial_states_wilks
+run_module: run_perturb_initial_states
+
+results_dir: tests/submit/output
+init_states_dir: tests/run/data/l96_init
+
+n_init_states: 2
+n_ens_members: 3
+
+# Perturbation parameters
+perturb_wilks: true
+l96_data_dir: tests/run/data/l96_train
+l96_load_backend: numpy
+cpu_count: 2
+
+seed_base: 0

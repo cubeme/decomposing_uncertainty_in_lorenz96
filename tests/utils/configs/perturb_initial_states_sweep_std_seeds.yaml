@@ -1,0 +1,16 @@
+experiment_name: perturb_initial_states_sweep
+run_module: run_perturb_initial_states
+
+results_dir: tests/utils/output
+init_states_dir: tests/run/data/l96_init
+
+perturb_std:
+  - 0.01
+  - 0.05
+n_seeds:
+  - 5
+  - 10
+n_init_states: 2
+n_ens_members: 3
+
+seed: 0

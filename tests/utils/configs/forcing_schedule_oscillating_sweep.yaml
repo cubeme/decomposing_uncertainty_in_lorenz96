@@ -1,0 +1,30 @@
+experiment_name: schedule_oscillating_sweep
+run_module: run_ensemble_l96
+
+simulation_type: ensemble
+init_states_type: perturbed
+
+results_dir: tests/utils/output
+
+K: 8
+J: 32
+f_schedule:
+  type: oscillating
+  Fmean: 18
+  amp:
+    - 2
+    - 5
+  freq: 0.5
+h: 1.0
+b: 10.0
+c: 10.0
+
+n_init_states: 2
+n_ens_members: 2
+
+init_states_dir: tests/run/data/l96_init
+
+si: 0.05
+dt: 0.01
+total_time: 5
+seed: 0

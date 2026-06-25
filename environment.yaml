@@ -1,0 +1,30 @@
+name: uncertainty
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - absl-py
+  - arviz
+  - bambi
+  - dask
+  - ipython
+  - jupyterlab
+  - matplotlib
+  - numba
+  - numcodecs
+  - numpy
+  - pandas
+  - psutil
+  - pymc
+  - pytensor
+  - pytest
+  - pytorch
+  - pytorch-lightning
+  - pyyaml
+  - scikit-learn
+  - scipy
+  - seaborn
+  - tensorboard
+  - xarray
+  - zarr>=3
+  

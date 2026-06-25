@@ -1,0 +1,26 @@
+experiment_name: l96_single_test
+run_module: run_single_l96
+simulation_type: single
+
+results_dir: tests/run/output
+save_backend: zarr
+
+K: 4
+J: 2
+f_schedule:
+  type: oscillating
+  Fmean: 4
+  amp: 2
+  freq: 0.5
+h: 1.0
+b: 2.0
+c: 2.0
+
+total_time: 5
+spin_up_time: 0
+si: 0.05
+dt: 0.01
+
+seed: 0
+plot: true
+plot_start_time: 0.0

@@ -1,0 +1,29 @@
+experiment_name: perturb_initial_states_conditional_params
+run_module: run_perturb_initial_states
+
+results_dir: tests/utils/output
+init_states_dir: tests/run/data/l96_init
+
+n_init_states: 2
+n_ens_members: 3
+
+load_sweep:
+  F:
+    - 18.0
+    - 20.0
+  c:
+    - 4.0
+    - 10.0
+
+perturb_std: 0.01
+
+conditional_params:
+  perturb_std:
+    depends_on: c
+    values:
+      - when: 4.0
+        set: 0.6
+      - when: 10.0
+        set: 0.02
+
+seed: 0

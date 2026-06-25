@@ -1,0 +1,50 @@
+experiment_name: flow_training_tail_history_forcing_test
+run_module: run_flow_training
+
+results_dir: tests/run/output
+
+l96_data_dir: tests/run/data/l96_train
+l96_load_backend: numpy
+
+K: 4
+J: 2
+F: 4.0
+h: 1.0
+b: 2.0
+c: 2.0
+si: 0.1
+
+n_coupling_layers: 1
+hidden_dims: [8, 8]
+
+# Flow variations 
+use_flexible_tails: true
+ttf_init_lambda: 0.1
+delta_t: 1
+include_forcing_in_cond: true
+
+epochs: 1
+batch_size: 2
+lr: 0.001
+weight_decay: 0.0
+grad_clip: null
+
+train_perc: 0.6
+val_perc: 0.2
+test_perc: 0.2
+
+device: cpu
+devices: 1
+strategy: null
+num_workers_data_loader: 2
+
+tensorboard_log_dir: null
+early_stopping_patience: 0
+early_stopping_min_delta: 0.0
+
+fit_ar_parameters: true
+ar_order: 1
+
+seq_len: 2
+
+seed: 0

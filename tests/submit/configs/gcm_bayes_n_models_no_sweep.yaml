@@ -1,0 +1,35 @@
+experiment_name: gcm_bayes_ensemble
+run_module: run_ensemble_gcm
+
+simulation_type: ensemble
+
+parameterization_type: bayesian_regression
+init_states_type: perfect
+results_dir: tests/submit/output
+
+
+K: 8
+J: 32
+f_schedule:
+  type: linear
+  F0: 18
+  F1: 22
+  t0: 0
+  t1: 5
+c: 10.0
+h: 1.0
+b: 10.0
+
+n_init_states: 2
+n_ens_members: 1
+n_models: 2
+
+dt: 0.01
+si: 0.05
+total_time: 5
+time_stepping: RK2
+
+seed: 0
+
+init_states_dir: tests/run/data/gcm_init
+params_dir: tests/run/data/params_bayes

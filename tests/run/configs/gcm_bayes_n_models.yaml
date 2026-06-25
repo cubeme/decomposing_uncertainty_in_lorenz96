@@ -1,0 +1,28 @@
+experiment_name: gcm_bayes_n_models_test
+run_module: run_ensemble_gcm
+simulation_type: ensemble
+
+parameterization_type: bayesian_regression
+init_states_type: perfect
+
+results_dir: tests/run/output
+total_time: 5
+si: 0.05
+dt: 0.01
+K: 3
+J: 2
+F: 4
+h: 1.0
+b: 2.0
+c: 2.0
+
+n_init_states: 2
+n_ens_members: 1
+n_models: 2
+
+cpu_count: 1
+seed: 2
+
+time_stepping: RK2
+init_states_dir: tests/run/data/gcm_init
+params_dir: tests/run/data/params_bayes_uncertainty

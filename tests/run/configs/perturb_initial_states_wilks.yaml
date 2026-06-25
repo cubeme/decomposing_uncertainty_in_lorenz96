@@ -1,0 +1,17 @@
+experiment_name: perturb_init_test
+run_module: run_perturb_initial_states
+results_dir: tests/run/output
+
+init_states_dir: tests/run/data/l96_init
+
+# Perturbation parameters
+perturb_wilks: true
+l96_data_dir: tests/run/data/l96_train
+l96_load_backend: numpy
+cpu_count: 2
+
+n_init_states: null
+n_ens_members: 3
+
+# Miscellaneous
+seed: 42

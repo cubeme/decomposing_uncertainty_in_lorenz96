@@ -1,0 +1,43 @@
+experiment_name: ensemble_gcm_tail_flow/mix
+run_module: run_ensemble_gcm
+
+parameterization_type: flow
+simulation_type: ensemble
+init_states_type: perturbed # perfect or perturbed
+
+# Lorenz '96 model parameters
+K: 8                
+J: 32               
+F: 20.0      
+h: 1.0              
+b: 10.0           
+c: 10.0   
+
+# GCM simulation parameters
+total_time: 10
+dt: 0.005
+si: 0.005
+time_stepping: RK2
+
+# Flow variations
+use_flexible_tails: true
+ttf_init_lambda: 0.1
+
+# Ensemble parameters
+n_init_states: 300
+n_ens_members: 20
+n_models: 1
+init_states_dir: results/init_states_300_perturbed/F_20.0
+
+# Flow parameterization
+noise_type: [white, ar_p] # 'white' or 'ar_p'
+ar_order: 1
+flow_device: cuda
+
+# Input/output
+results_dir: results
+params_dir: results/parameters_tail_flow
+save_backend: zarr
+
+# Miscellaneous
+seed: 0

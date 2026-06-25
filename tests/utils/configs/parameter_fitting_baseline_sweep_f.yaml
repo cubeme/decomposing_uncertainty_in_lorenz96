@@ -1,0 +1,24 @@
+experiment_name: parameter_fitting_baseline
+run_module: run_parameter_fitting_baseline
+
+results_dir: tests/utils/output
+
+params_to_fit:
+  - poly_coefs
+  - ar_p
+
+K: 8
+J: 32
+f_schedule:
+  type: constant
+  F: 
+    - 18.0
+    - 20.0
+h: 1.0
+b: 10.0
+c: 10.0
+
+l96_data_dir: tests/run/data/l96_data
+l96_load_backend: numpy
+si: 0.05
+seed: 0

@@ -1,0 +1,56 @@
+experiment_name: l96_ensemble_sweep_schedule_conditional_params
+run_module: run_ensemble_l96
+
+simulation_type: ensemble
+init_states_type: perturbed # perfect or perturbed
+
+# Lorenz '96 parameters
+K: 8                
+J: 32               
+f_schedule:
+  - type: linear
+    F0: 18
+    F1: 23
+    t0: 0
+    t1: 5 
+  - type: oscillating
+    Fmean: 20
+    amp: 2
+    freq: 5                
+h: 1.0              
+b: 10.0           
+c: 10.0
+
+# Time parameters
+si: 0.05
+dt: 0.01
+total_time: 5
+
+# Ensemble parameters
+n_init_states: 2
+n_ens_members: 2
+conditional_params:
+  init_states_dir:
+    depends_on: f_schedule
+    values:
+       - when:
+          type: linear
+          F0: 18
+          F1: 23
+          t0: 0
+          t1: 5
+         set: tests/run/data/l96_init_perturbed
+       - when:
+          type: oscillating
+          Fmean: 20
+          amp: 2
+          freq: 5
+         set: tests/run/data/l96_init_perturbed_cond
+
+# Output
+results_dir: tests/submit/output
+save_backend: zarr
+save_y: false
+
+# Resources
+seed: 0

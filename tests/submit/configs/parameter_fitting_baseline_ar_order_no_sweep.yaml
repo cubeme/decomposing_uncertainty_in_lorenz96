@@ -1,0 +1,39 @@
+experiment_name: fitted_parameters_baseline_test
+run_module: run_parameter_fitting_baseline
+simulation_type: parameter_fitting
+
+results_dir: tests/submit/output
+l96_data_dir: tests/run/data/l96_train
+
+l96_load_backend: numpy
+
+
+params_to_fit:
+  - poly_coefs
+  - ar_p
+
+K: 8
+J: 32
+f_schedule:
+  type: linear
+  F0: 18
+  F1: 22
+  t0: 0
+  t1: 5
+c: 10.0
+h: 1.0
+b: 10.0
+
+si: 0.05
+
+train_perc: 0.6
+
+# Polynomial fitting
+poly_order: 2
+
+# AR order to fit
+ar_order: [1, 2]
+
+chunk_length: 2
+
+seed: 0

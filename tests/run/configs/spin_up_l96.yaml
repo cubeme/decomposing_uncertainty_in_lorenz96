@@ -1,0 +1,20 @@
+experiment_name: l96_spin_up_test
+run_module: run_spin_up_l96
+simulation_type: spin_up
+results_dir: tests/run/output
+
+K: 4
+J: 2
+f_schedule:
+  type: constant
+  F: 4.0
+h: 1.0
+b: 2.0
+c: 2.0
+
+spin_up_time: 3
+number_of_spin_ups: 2
+
+si: 0.05
+dt: 0.01
+seed: 0

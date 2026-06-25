@@ -1,0 +1,15 @@
+experiment_name: perturb_init_test
+run_module: run_perturb_initial_states
+results_dir: tests/run/output
+
+init_states_dir: tests/run/data/l96_init
+
+# Perturbation parameters
+perturb_iid: true
+perturb_std: 0.1
+
+n_init_states: null
+n_ens_members: 3
+
+# Miscellaneous
+seed: 42

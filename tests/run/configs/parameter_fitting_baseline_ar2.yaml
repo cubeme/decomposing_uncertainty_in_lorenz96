@@ -1,0 +1,26 @@
+experiment_name: param_fit_baseline_test
+run_module: run_parameter_fitting_baseline
+results_dir: tests/run/output
+
+l96_data_dir: tests/run/data/l96_train
+l96_load_backend: numpy
+
+params_to_fit:
+  - poly_coefs
+  - ar_p
+
+K: 4
+J: 2
+F: 4.0
+h: 1.0
+b: 2.0
+c: 2.0
+si: 0.05
+
+train_perc: 0.6
+ar_order: 2
+
+# Polynomial fitting
+poly_order: 2
+
+seed: 0

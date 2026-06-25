@@ -1,0 +1,37 @@
+experiment_name: gcm_flow_n_models_test
+run_module: run_ensemble_gcm
+
+simulation_type: ensemble
+parameterization_type: flow # options: flow
+
+init_states_type: perfect
+
+results_dir: tests/run/output
+total_time: 5
+
+K: 3
+J: 2
+f_schedule:
+  type: constant
+  F: 4.0
+h: 1.0
+b: 2.0
+c: 2.0
+
+si: 0.05
+dt: 0.01
+
+n_init_states: 2
+n_ens_members: 1
+n_models: 2
+
+cpu_count: 1
+seed: 0
+
+time_stepping: RK2
+noise_type: white
+ar_order: 0
+flow_device: cpu
+
+init_states_dir: tests/run/data/gcm_init
+params_dir: tests/run/data/params_flow

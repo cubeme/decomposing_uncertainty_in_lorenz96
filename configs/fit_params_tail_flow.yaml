@@ -1,0 +1,59 @@
+experiment_name: parameters_tail_flow
+run_module: run_flow_training
+
+
+# L96 data source
+l96_data_dir: results/l96_training_data_t20000/F_20.0
+l96_load_backend: zarr
+
+# L96 model parameters
+K: 8                
+J: 32               
+F: 20.0           
+h: 1.0              
+b: 10.0           
+c: 10.0   
+si: 0.005  # sampling interval used to generate L96 data
+
+# Flow model parameters
+n_coupling_layers: 4
+hidden_dims: [128, 128, 128]
+
+# Flow variations
+use_flexible_tails: true
+ttf_init_lambda: 0.1
+
+# Training parameters
+epochs: 100
+batch_size: 2056 # keep in mind to reduce batch size if training on multiple GPUs
+lr: 0.001
+seq_len: 1
+
+device: cuda
+devices: 1
+strategy: null # e.g., 'auto' or 'ddp' for distributed data parallel
+
+num_workers_data_loader: 4
+
+weight_decay: 0.0
+grad_clip: null
+
+train_perc: 0.15
+val_perc: 0.10
+test_perc: 0.75
+
+tensorboard_log_dir: true # will create 'tensorboard' subdirectory in out_dir if true
+early_stopping_patience: 8
+early_stopping_min_delta: 1e-4
+early_stopping_monitor: val_loss
+
+# AR(p) parameters
+fit_ar_parameters: true 
+ar_order: 1
+fit_method: least_squares
+
+# Output
+results_dir: results
+
+# Miscellaneous
+seed: 0

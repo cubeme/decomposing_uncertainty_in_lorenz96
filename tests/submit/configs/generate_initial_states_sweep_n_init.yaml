@@ -1,0 +1,26 @@
+experiment_name: generate_initial_states_l96
+run_module: run_generate_initial_states
+
+simulation_type: IC_generation
+results_dir: tests/submit/output
+
+generate_method: selection
+
+K: 8
+J: 32
+f_schedule:
+  type: constant
+  F: 20.0
+h: 1.0
+b: 10.0
+c: 10.0
+
+n_init_states:
+  - 2
+  - 5
+  - 10
+
+dt: 0.01
+spinup_time: 5
+
+seed: 0

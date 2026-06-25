@@ -1,0 +1,37 @@
+experiment_name: fitted_parameters_bayes
+run_module: run_parameter_fitting_bayes
+
+# L96 data source
+l96_data_dir: results/l96_training_data_t20000/F_20.0
+l96_load_backend: zarr
+
+params_to_fit:
+  - bayes_coefs
+
+# L96 model parameters
+K: 8                
+J: 32               
+F: 20.0       
+h: 1.0              
+b: 10.0           
+c: 10.0    
+si: 0.005  # sampling interval used to generate L96 data
+
+# Polynomial fitting
+poly_order: 3
+
+# Bayesian regression parameters
+chains: 4
+draws: 800
+tune: 800
+n_ens_members: 20
+n_models: 20
+
+# Training parameters
+train_perc: 0.15  # percentage of data to use for training
+
+# Output
+results_dir: results/
+
+# Miscellaneous
+seed: 0

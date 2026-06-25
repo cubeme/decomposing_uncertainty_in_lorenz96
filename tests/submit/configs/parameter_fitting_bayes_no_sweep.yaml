@@ -1,0 +1,36 @@
+experiment_name: fitted_parameters_bayes_test
+run_module: run_parameter_fitting_bayes
+simulation_type: parameter_fitting
+
+results_dir: tests/submit/output
+l96_data_dir: tests/run/data/l96_train
+
+l96_load_backend: numpy
+
+params_to_fit:
+  - bayes_coefs
+  
+K: 8
+J: 32
+f_schedule:
+  type: constant
+  F: 20.0
+c: 10.0
+h: 1.0
+b: 10.0
+
+si: 0.05
+
+train_perc: 0.6
+
+# Polynomial fitting
+poly_order: 2
+
+# Bayesian regression parameters
+chains: 1
+draws: 6
+tune: 6
+n_ens_members: 2
+n_models: 2
+
+seed: 0
