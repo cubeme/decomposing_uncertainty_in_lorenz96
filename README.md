@@ -2,8 +2,7 @@
 
 This repository contains the source code for the paper [*Decomposing Ensemble Spread in Lorenz '96 with Learned Stochastic Parameterizations*](https://arxiv.org/abs/2605.22242) by Birgit Kühbacher, Daan Crommelin, and Niki Kilbertus.  
 
-[![DOI: 10.5281/zenodo.20848278](https://zenodo.org/badge/doi/10.5281/zenodo.20848278.svg)](https://doi.org/10.5281/zenodo.20848278)
-
+[![DOI: 10.5281/zenodo.20931977](https://zenodo.org/badge/doi/10.5281/zenodo.20931977.svg)](https://doi.org/10.5281/zenodo.20931977)
 
 Weather and climate forecasts are inherently uncertain because of chaotic dynamics, imperfect initial conditions, and incomplete representations of the underlying physical processes. Operational ensembles aim to represent these uncertainties through forecast spread, yet many approaches are underdispersive: their spread grows too slowly relative to forecast error.
 
